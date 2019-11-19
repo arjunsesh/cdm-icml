@@ -8,6 +8,7 @@ Johan Ugander in ICML 2019 (http://proceedings.mlr.press/v97/seshadri19a.html).
 
 Below is code for a sample run to train the CDM on SFWork, a dataset 
 explored in the paper (as run from the code directory): 
+```
 import cdm_pytorch as cp
 val_loss, tr_loss, gv, train_ds, val_ds, model, opt = cp.default_run(dataset='SFshop',
                                                                      batch_size=None,
@@ -17,25 +18,26 @@ val_loss, tr_loss, gv, train_ds, val_ds, model, opt = cp.default_run(dataset='SF
                                                                      seed=0,
                                                                      wd=0)
 print(f'Val Loss: {val_loss.item()}, Tr Loss: {tr_loss.item()}, final_grad: {gv.item()}')
+```
 
 The above function is a wrapper function to use the CDM. The inputs used are 
 described below, but see in-line documentation for more details. 
 
-dataset - name of dataset to run CDM on. Default options are 
+*dataset* - name of dataset to run CDM on. Default options are 
 'SFwork', 'SFshop', or 'syn_nature_triplet' to run the datasets in the paper.
 
-batch_size - hyperparameter for training, number of points to be used for 
+*batch_size* - hyperparameter for training, number of points to be used for 
 each gradient step (None means full batch)
 
-epochs - number of epochs to perform optimization. If batch_size is set to
+*epochs* - number of epochs to perform optimization. If batch_size is set to
 None, this is just the number of gradient steps taken
 
-embedding_dim - dimension of CDM (r in the paper)
+*embedding_dim* - dimension of CDM (r in the paper)
 
-lr - learning rate for Adam optimizer (the default optimizer)
+*lr* - learning rate for Adam optimizer (the default optimizer)
 
-seed - random seed that sets dataset splits + initialization for 
+*seed* - random seed that sets dataset splits + initialization for 
 reproducibility (None means no seed)
 
-wd - weight decay parameter for the model (similar to l2 regularization,
+*wd* - weight decay parameter for the model (similar to l2 regularization,
 but faster - see pytorch docs for more info)
