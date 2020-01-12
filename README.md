@@ -6,7 +6,7 @@ The following code uses the open source machine learning framework pytorch
 Effects from Raw Choice Data" by Arjun Seshadri, Alexander Peysakhovich and 
 Johan Ugander in ICML 2019 (http://proceedings.mlr.press/v97/seshadri19a.html).
 
-Below is code for a sample run to train the CDM on SFWork, a dataset 
+Below is code for a sample run to train the CDM on SFShop, a dataset 
 explored in the paper (as run from the code directory): 
 ```
 import cdm_pytorch as cp
